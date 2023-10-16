@@ -8,5 +8,5 @@
 import Foundation
 
 protocol StandingsService{
-    func getStandings()
+    func getStandings(onSuccess:@escaping ([StandingsModel])->Void,onError:@escaping ()->Void)
 }

@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+
+enum NetworkError : Error{
+    case InvalidURL
+    case InvalidResponse
+    case InvalidData
+}

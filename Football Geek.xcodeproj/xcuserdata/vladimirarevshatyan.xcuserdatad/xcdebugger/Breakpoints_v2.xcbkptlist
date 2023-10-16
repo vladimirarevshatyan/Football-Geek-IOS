@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "DC3D67CF-9953-4241-ACA7-984B90B2BA97"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A6EB3839-8C9B-4A89-AF28-656883A48036"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Football Geek/Views/StandingsScreen/StandingsScreen.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "54D8DBFF-F447-42A9-8A9D-65AA83253FE0"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Football Geek/ViewModels/StandingScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "handleEffect(effect:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "54D8DBFF-F447-42A9-8A9D-65AA83253FE0 - d722f994c9046921"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Football_Geek.StandingScreenViewModel.handleEffect(effect: Football_Geek.StandingsEffect) -&gt; ()"
+                  moduleName = "Football Geek"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirarevshatyan/Desktop/IOSProjects/Football%20Geek/Football%20Geek/ViewModels/StandingScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "80">
+               </Location>
+               <Location
+                  uuid = "54D8DBFF-F447-42A9-8A9D-65AA83253FE0 - d722f994c9047776"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Football_Geek.StandingScreenViewModel.handleEffect(effect: Football_Geek.StandingsEffect) -&gt; ()"
+                  moduleName = "Football Geek"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/vladimirarevshatyan/Desktop/IOSProjects/Football%20Geek/Football%20Geek/ViewModels/StandingScreenViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

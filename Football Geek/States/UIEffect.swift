@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+/**
+ This protocol considers to be a marker for UIEffects send and received through view model
+ */
+protocol UIEffect{}

@@ -6,3 +6,14 @@
 //
 
 import Foundation
+import SwiftUI
+
+
+class ViewModel<Effect:UIEffect> : ObservableObject{
+    
+    func handleEffect(effect:Effect){}
+    
+    func setEffect(effect:Effect){
+        handleEffect(effect: effect)
+    }
+}

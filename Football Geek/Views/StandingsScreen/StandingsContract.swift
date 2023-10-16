@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+enum StandingsEffect : UIEffect{
+    case GetStandings
+}
+

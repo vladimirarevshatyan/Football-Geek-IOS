@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+struct StandingsUIModel{
+    let id = UUID()
+    var name:String
+    var abbrevation:String
+}
