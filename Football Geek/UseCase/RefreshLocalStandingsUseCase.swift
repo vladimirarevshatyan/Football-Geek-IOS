@@ -12,10 +12,10 @@ class RefreshLocalStandingsUseCase : UseCase{
     
     @Inject private var localRepository:LocalRepositoryImpl
         
-    typealias Argument = Void?
+    typealias Argument = Void
     typealias ReturnType = Void?
     
-    func execute(argument: Void??) async -> Void? {
+    func execute(argument: Void?) async -> Void? {
        await localRepository.refreshData()
     }
 }

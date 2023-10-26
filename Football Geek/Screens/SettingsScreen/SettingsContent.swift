@@ -50,7 +50,7 @@ struct SettingsContent  : View{
                 }
                 
                 HStack{
-                    Image(systemName: "opticaldiscdrive.fill")
+                    Image(systemName: "calendar.badge.clock")
                     
                     Text("Standings Cache Time")
                         .font(.headline)

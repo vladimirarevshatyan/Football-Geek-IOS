@@ -12,6 +12,7 @@ import CoreData
 struct StandingsContent: View {
     @Environment(\.managedObjectContext) var mockEnvo
     @State private var cancelable:AnyCancellable?
+    @State private var showBottomSheet:Bool = false
     
     @ObservedObject
     private var viewModel:StandingScreenViewModel = StandingScreenViewModel()
@@ -41,20 +42,24 @@ struct StandingsContent: View {
             viewModel.setEffect(effect: StandingsEffect.GetStandings)
         }
     }
-}
-
-private struct SuccessContent : View{
     
-    let viewModel:StandingScreenViewModel
-    let onRefresh:()->Void
-    
-    var body : some View{
-        VStack{
+    private func SuccessContent (
+        viewModel:StandingScreenViewModel,
+        onRefresh:@escaping ()->Void
+    )-> some View{
+        
+        return  VStack{
             
             HeaderContent(
                 imageName: "figure.soccer",
                 titleText:viewModel.headerTitle
             )
+            
+            if(viewModel.showInternetWarning){
+                InternetWarningContent{
+                    showBottomSheet.toggle()
+                }
+            }
             
             if(!viewModel.competitions.isEmpty){
                 
@@ -77,26 +82,29 @@ private struct SuccessContent : View{
             }
             .padding(.all,1)
         }
+        .sheet(isPresented: $showBottomSheet){
+            BottomSheet(
+                title: "No Internet Connection",
+                message: "You Don't have an active internet connection and we are currently using available local data where possible. Once internet connection is restored, we will update data", leftIcon:"exclamationmark.bubble.fill",
+                iconTintColor: .blue
+            )
+            .presentationDetents([.medium])
+        }
     }
-}
-
-private struct ErrorContent : View{
     
-    let errorMessage:String?
-    
-    var body : some View{
-        VStack(alignment:.leading){
+    private func ErrorContent(errorMessage:String?) -> some View{
+        
+        return VStack(alignment:.leading){
             Text(errorMessage ?? "Unprocessable Error")
                 .frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .center)
         }
         .padding(20)
         .frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading)
     }
-}
-
-private struct LoadingContent : View{
-    var body : some View{
-        VStack(alignment:.leading){
+    
+    private func LoadingContent ()-> some View{
+        
+        return VStack(alignment:.leading){
             ProgressView()
                 .frame(maxWidth:.infinity,
                        maxHeight: .infinity,alignment: .center)
@@ -105,7 +113,6 @@ private struct LoadingContent : View{
         .frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading)
     }
 }
-
 #Preview {
     StandingsContent()
 }

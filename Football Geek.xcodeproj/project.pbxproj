@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C40CD72B2AEACAB400E722F1 /* CompetitionUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CD72A2AEACAB400E722F1 /* CompetitionUIModel.swift */; };
-		C40CD72E2AEAE91600E722F1 /* GetLocalStandingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CD72D2AEAE91600E722F1 /* GetLocalStandingsUseCase.swift */; };
 		C4137DE22AE7200A00063761 /* DIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4137DE12AE7200A00063761 /* DIManager.swift */; };
 		C4137DE42AE725AE00063761 /* DIProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4137DE32AE725AE00063761 /* DIProperty.swift */; };
 		C4137DEA2AE72E1300063761 /* DIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4137DE92AE72E1200063761 /* DIExtensions.swift */; };
@@ -46,6 +45,7 @@
 		C46217192AE1CAE80076C04D /* ModelsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46217182AE1CAE80076C04D /* ModelsExtension.swift */; };
 		C485AE122AE1AB0A00627ED8 /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485AE112AE1AB0900627ED8 /* LocalRepository.swift */; };
 		C485AE142AE1AB3800627ED8 /* LocalRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485AE132AE1AB3800627ED8 /* LocalRepositoryImpl.swift */; };
+		C496FA3A2AEB33C300140CA2 /* GetLocalStandingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C496FA392AEB33C300140CA2 /* GetLocalStandingsUseCase.swift */; };
 		C49CEA812AEAEA570049355C /* StandingsLocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49CEA802AEAEA570049355C /* StandingsLocalModel.swift */; };
 		C49CEA832AEAEB0B0049355C /* ViewModelsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49CEA822AEAEB0B0049355C /* ViewModelsExtension.swift */; };
 		C4A362362AEAC24800AF4A2C /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A362352AEAC24800AF4A2C /* Competition.swift */; };
@@ -54,6 +54,9 @@
 		C4A3623C2AEAC6D500AF4A2C /* GetCompetitionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3623B2AEAC6D500AF4A2C /* GetCompetitionsUseCase.swift */; };
 		C4B66D562AE29AE00036777E /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B66D552AE29AE00036777E /* TimeHelper.swift */; };
 		C4C8F0142AEB0FC000CA2587 /* RefreshLocalStandingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8F0132AEB0FC000CA2587 /* RefreshLocalStandingsUseCase.swift */; };
+		C4C8F0172AEB184E00CA2587 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C4C8F0162AEB184E00CA2587 /* Alamofire */; };
+		C4C8F0192AEB18AB00CA2587 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8F0182AEB18AB00CA2587 /* Connectivity.swift */; };
+		C4C8F01B2AEB1B0F00CA2587 /* InternetWarningContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8F01A2AEB1B0F00CA2587 /* InternetWarningContent.swift */; };
 		C4D508752AE8346100223896 /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D508742AE8346100223896 /* DropDownMenu.swift */; };
 		C4D508772AE839C800223896 /* DropDownTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D508762AE839C800223896 /* DropDownTimeModel.swift */; };
 /* End PBXBuildFile section */
@@ -77,7 +80,6 @@
 
 /* Begin PBXFileReference section */
 		C40CD72A2AEACAB400E722F1 /* CompetitionUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionUIModel.swift; sourceTree = "<group>"; };
-		C40CD72D2AEAE91600E722F1 /* GetLocalStandingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocalStandingsUseCase.swift; sourceTree = "<group>"; };
 		C4137DE12AE7200A00063761 /* DIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIManager.swift; sourceTree = "<group>"; };
 		C4137DE32AE725AE00063761 /* DIProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIProperty.swift; sourceTree = "<group>"; };
 		C4137DE92AE72E1200063761 /* DIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIExtensions.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		C46217182AE1CAE80076C04D /* ModelsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsExtension.swift; sourceTree = "<group>"; };
 		C485AE112AE1AB0900627ED8 /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
 		C485AE132AE1AB3800627ED8 /* LocalRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepositoryImpl.swift; sourceTree = "<group>"; };
+		C496FA392AEB33C300140CA2 /* GetLocalStandingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocalStandingsUseCase.swift; sourceTree = "<group>"; };
 		C49CEA802AEAEA570049355C /* StandingsLocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsLocalModel.swift; sourceTree = "<group>"; };
 		C49CEA822AEAEB0B0049355C /* ViewModelsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelsExtension.swift; sourceTree = "<group>"; };
 		C4A362352AEAC24800AF4A2C /* Competition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 		C4A3623B2AEAC6D500AF4A2C /* GetCompetitionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCompetitionsUseCase.swift; sourceTree = "<group>"; };
 		C4B66D552AE29AE00036777E /* TimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
 		C4C8F0132AEB0FC000CA2587 /* RefreshLocalStandingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshLocalStandingsUseCase.swift; sourceTree = "<group>"; };
+		C4C8F0182AEB18AB00CA2587 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		C4C8F01A2AEB1B0F00CA2587 /* InternetWarningContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetWarningContent.swift; sourceTree = "<group>"; };
 		C4D508742AE8346100223896 /* DropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
 		C4D508762AE839C800223896 /* DropDownTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTimeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,6 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4C8F0172AEB184E00CA2587 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +166,7 @@
 			children = (
 				C4A362372AEAC48800AF4A2C /* StandingsItems.swift */,
 				C4A362392AEAC5A200AF4A2C /* StandingsCompetitionItem.swift */,
+				C4C8F01A2AEB1B0F00CA2587 /* InternetWarningContent.swift */,
 			);
 			path = StandingsScreenItems;
 			sourceTree = "<group>";
@@ -351,8 +358,8 @@
 				C45727A22AE19D6F0054195B /* GetCacheCanBeUsed.swift */,
 				C45727A42AE19DC80054195B /* ArgumentedUseCase.swift */,
 				C4A3623B2AEAC6D500AF4A2C /* GetCompetitionsUseCase.swift */,
-				C40CD72D2AEAE91600E722F1 /* GetLocalStandingsUseCase.swift */,
 				C4C8F0132AEB0FC000CA2587 /* RefreshLocalStandingsUseCase.swift */,
+				C496FA392AEB33C300140CA2 /* GetLocalStandingsUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -401,6 +408,7 @@
 				C46217182AE1CAE80076C04D /* ModelsExtension.swift */,
 				C4B66D552AE29AE00036777E /* TimeHelper.swift */,
 				C49CEA822AEAEB0B0049355C /* ViewModelsExtension.swift */,
+				C4C8F0182AEB18AB00CA2587 /* Connectivity.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -421,6 +429,9 @@
 			dependencies = (
 			);
 			name = "Football Geek";
+			packageProductDependencies = (
+				C4C8F0162AEB184E00CA2587 /* Alamofire */,
+			);
 			productName = "Football Geek";
 			productReference = C42F20EE2AD861A700D45D7B /* Football Geek.app */;
 			productType = "com.apple.product-type.application";
@@ -493,6 +504,9 @@
 				Base,
 			);
 			mainGroup = C42F20E52AD861A700D45D7B;
+			packageReferences = (
+				C4C8F0152AEB184E00CA2587 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = C42F20EF2AD861A700D45D7B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -537,6 +551,7 @@
 			files = (
 				C45727912AE16CBC0054195B /* HomeContent.swift in Sources */,
 				C43F2F4F2ADDA323002AB159 /* UseCase.swift in Sources */,
+				C4C8F0192AEB18AB00CA2587 /* Connectivity.swift in Sources */,
 				C485AE142AE1AB3800627ED8 /* LocalRepositoryImpl.swift in Sources */,
 				C457278E2AE058360054195B /* StandingTables.swift in Sources */,
 				C42F212C2AD87D6100D45D7B /* ViewModel.swift in Sources */,
@@ -546,6 +561,7 @@
 				C46217192AE1CAE80076C04D /* ModelsExtension.swift in Sources */,
 				C45727A12AE19C4F0054195B /* SaveCacheIsOnUseCase.swift in Sources */,
 				C43F2F3E2ADD9B8E002AB159 /* StandingsModel.swift in Sources */,
+				C496FA3A2AEB33C300140CA2 /* GetLocalStandingsUseCase.swift in Sources */,
 				C42F21242AD8692800D45D7B /* StandingScreenViewModel.swift in Sources */,
 				C45727972AE18FA90054195B /* SettingsContract.swift in Sources */,
 				C42F20F22AD861A700D45D7B /* Football_GeekApp.swift in Sources */,
@@ -557,6 +573,7 @@
 				C42F211E2AD8647F00D45D7B /* StandingsContent.swift in Sources */,
 				C457279F2AE19A180054195B /* KeyValueStorage.swift in Sources */,
 				C43F2F362ADD9984002AB159 /* StandingsService.swift in Sources */,
+				C4C8F01B2AEB1B0F00CA2587 /* InternetWarningContent.swift in Sources */,
 				C45727942AE16D5B0054195B /* SettingsContent.swift in Sources */,
 				C4D508752AE8346100223896 /* DropDownMenu.swift in Sources */,
 				C43F2F4D2ADDA31C002AB159 /* GetStandingsUseCase.swift in Sources */,
@@ -578,7 +595,6 @@
 				C40CD72B2AEACAB400E722F1 /* CompetitionUIModel.swift in Sources */,
 				C4A362382AEAC48800AF4A2C /* StandingsItems.swift in Sources */,
 				C45727A52AE19DC80054195B /* ArgumentedUseCase.swift in Sources */,
-				C40CD72E2AEAE91600E722F1 /* GetLocalStandingsUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -908,6 +924,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C4C8F0152AEB184E00CA2587 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire#network-reachability";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.8.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C4C8F0162AEB184E00CA2587 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C4C8F0152AEB184E00CA2587 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C45727A62AE1A4D00054195B /* LocalData.xcdatamodeld */ = {

@@ -28,30 +28,42 @@ class StandingScreenViewModel : ViewModel<StandingsEffect>{
     @Published var errorMessage:String? = nil
     @Published var headerTitle:String  = "Loading"
     @Published var competitions:[CompetitionUIModel] = []
+    @Published var showInternetWarning:Bool = true
     
     private func getStandings() async{
         
         onUI {
+            self.showInternetWarning = false
             self.errorMessage = nil
             self.isLoading = true
         }
         
         let competitionId = self.localRepoHelper.getString(key: DefaultsKeys.chosenCompetitionId) ?? Competition.EnglishPremierLeague.rawValue
         
-        let useCache = await getCanUseCache.execute(argument:competitionId)
+        let canUseCache = await getCanUseCache.execute(argument:competitionId)
         
         onUI {
             self.headerTitle = Competition(rawValue: competitionId)?.getCompetitionName() ?? Competition.EnglishPremierLeague.getCompetitionName()
         }
         
-        if(useCache){
-            await getLocalStandings(competitionId:competitionId)
+        if(Connectivity.isConnectedToInternet){
+            
+            if(canUseCache){
+                await getLocalStandings(competitionId:competitionId)
+            }else{
+                await getStandingsFromServer(competitionId: competitionId)
+            }
         }else{
-            await getStandingsFromServer(competitionId: competitionId)
+            await getLocalStandings(competitionId:competitionId,hasInternetConnection: false)
         }
     }
     
     private func refreshStandings() async{
+        
+        onUI{
+            self.showInternetWarning = !Connectivity.isConnectedToInternet
+        }
+        
         let competitionId = localRepoHelper.getString(key: DefaultsKeys.chosenCompetitionId) ?? Competition.EnglishPremierLeague.rawValue
         
         let useCache = await getCanUseCache.execute(argument:competitionId)
@@ -76,11 +88,23 @@ class StandingScreenViewModel : ViewModel<StandingsEffect>{
         await getStandings()
     }
     
-    private func getLocalStandings(competitionId:String) async{
+    private func getLocalStandings(competitionId:String, hasInternetConnection:Bool = true) async{
         let localStandings =  await getLocalStandingsUseCase.execute(argument: competitionId)
-        onUI {
-            self.standingsUiModel = localStandings.asStandingsUIModel().sorted { $1.position.codingKey.intValue ?? 0 > $0.position.codingKey.intValue ?? 0}
-            self.isLoading = false
+        
+        if(hasInternetConnection){
+            onUI {
+                self.standingsUiModel = localStandings.asStandingsUIModel().sorted { $1.position.codingKey.intValue ?? 0 > $0.position.codingKey.intValue ?? 0}
+                self.isLoading = false
+            }
+        }else{
+            if(localStandings.isEmpty){
+                self.isLoading = false
+                self.errorMessage = "No Internet Connetion"
+            }else{
+                self.showInternetWarning = true
+                self.standingsUiModel = localStandings.asStandingsUIModel().sorted { $1.position.codingKey.intValue ?? 0 > $0.position.codingKey.intValue ?? 0}
+                self.isLoading = false
+            }
         }
     }
     

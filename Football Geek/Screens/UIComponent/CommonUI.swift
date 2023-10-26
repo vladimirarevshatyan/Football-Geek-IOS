@@ -32,3 +32,42 @@ struct HeaderContent : View{
         }.background(Color.darkBlue)
     }
 }
+
+func BottomSheet(
+    title:String,
+    message:String,
+    leftIcon:String,
+    iconTintColor:Color = .gray
+) -> some View{
+    return VStack(alignment:.leading){
+        HStack{
+            Image(systemName: leftIcon)
+                .resizable()
+                .frame(width: 42.0, height: 42.0)
+                .foregroundColor(iconTintColor)
+                .padding(.leading,20)
+                .padding(.top,30)
+            
+            Spacer()
+            
+            Text(title)
+                .font(.title2)
+                .lineLimit(1)
+                .padding(.top,18)
+            
+            Spacer()
+            Spacer()
+            
+        }.frame(maxWidth: .infinity, alignment: .topLeading)
+        
+        Text(message)
+            .font(.body)
+            .padding()
+        
+    }.frame(maxWidth: .infinity,maxHeight: .infinity, alignment: .topLeading)
+}
+
+
+#Preview {
+    StandingsContent()
+}
