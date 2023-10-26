@@ -16,3 +16,21 @@ extension StandingsLocalModel {
     return request
   }
 }
+
+extension [StandingsLocalModel]{
+    
+    func asStandingsUIModel()->[StandingsUIModel]{
+        return self.map { standingsLocalModel in
+            StandingsUIModel(
+                id: standingsLocalModel.id ?? "",
+                position: standingsLocalModel.position ?? "",
+                name: standingsLocalModel.name ?? "",
+                win: standingsLocalModel.win ?? "",
+                draw: standingsLocalModel.draw ?? "",
+                lose: standingsLocalModel.lose ?? "",
+                points: standingsLocalModel.points ?? "",
+                matches: standingsLocalModel.matches ?? ""
+            )
+        }
+    }
+}

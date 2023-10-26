@@ -7,8 +7,10 @@
 
 import Foundation
 
-enum StandingsEffect : UIEffect{
+enum  StandingsEffect : UIEffect{
     case GetStandings
     case OnRefresh
+    case GetCompetitions
+    case OnCompetitionChosen(id:String,name:String)
 }
 

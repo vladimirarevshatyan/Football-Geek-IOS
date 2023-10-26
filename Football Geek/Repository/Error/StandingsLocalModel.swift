@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+enum DatabaseError : Error{
+    case Empty
+    case DatabaseFetchErrpr
+}

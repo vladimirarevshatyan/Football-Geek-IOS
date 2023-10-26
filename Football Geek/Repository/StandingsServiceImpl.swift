@@ -6,37 +6,31 @@
 //
 
 import Foundation
+import SwiftUI
+import CoreData
 
-class StandingsServiceImpl  :  StandingsService{
+class StandingsServiceImpl : StandingsService{
     
-    private let newUrlRequest = "https://livescore-api.com/api-client/leagues/table.json?competition_id=2&key=pciuTzhv7ywyqPIx&secret=SDcmBt9yH1xp2varItWB2e69MDIdsqKk"
+    @Inject
+    private var localRepository:LocalRepositoryImpl
     
-    func getStandings(onSuccess: @escaping (StandingsModel)->Void,onError: @escaping ()->Void){
+    private let apiKey = "&key=pciuTzhv7ywyqPIx&secret=SDcmBt9yH1xp2varItWB2e69MDIdsqKk"
+    private let baseUrl = "https://livescore-api.com/api-client/leagues/table.json"
+    private let competitionUrl = "?competition_id="
+    
+    func getStandings(competition:Competition)async throws->StandingsModel{
         
-        let urlComponents = URLComponents(string: newUrlRequest)
+        let url = baseUrl+competitionUrl+competition.rawValue+apiKey
+        
+        let urlComponents = URLComponents(string: url)
         
         var request = URLRequest(url: (urlComponents?.url)!)
         request.httpMethod = "GET"
         
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) -> Void in
-            
-            if let error = error {
-                onError()
-            }else if(data != nil){
-                do{
-                    let decoder = JSONDecoder()
-                    decoder.keyDecodingStrategy = .convertFromSnakeCase
-                    let result = try decoder.decode(StandingsModel.self, from: data!)
-                    if(result.success){
-                        onSuccess(result)
-                    }else{
-                        onError()
-                    }
-                } catch{
-                    onError()
-                }
-            }
-        }
-        task.resume()
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        return try decoder.decode(StandingsModel.self, from: data)
     }
 }

@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+
+class SaveCacheIsOnUseCase : ArgumentedUseCase{
+    
+    typealias ReturnType = Void
+    
+    typealias ArgumentType = Bool
+    
+    
+    @Inject
+    private var localRepoHelper:KeyValueStorage
+    
+    func execute(argument: Bool, result: () -> Void) async {
+        localRepoHelper.setCacheIsOn(value: argument)
+        result()
+    }
+    
+}

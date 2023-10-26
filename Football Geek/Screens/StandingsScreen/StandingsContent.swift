@@ -12,8 +12,6 @@ import CoreData
 struct StandingsContent: View {
     @Environment(\.managedObjectContext) var mockEnvo
     @State private var cancelable:AnyCancellable?
-    @State private var useCache:Bool = false
-    @FetchRequest (sortDescriptors: [SortDescriptor(\.position)]) var localStandings:FetchedResults<StandingsUIDao>
     
     @ObservedObject
     private var viewModel:StandingScreenViewModel = StandingScreenViewModel()
@@ -31,30 +29,23 @@ struct StandingsContent: View {
                 )
             }
             
-            if(useCache){
-                SuccessContent(localStandings:localStandings, serverStandings:[],useCache: true){
-                    viewModel.setEffect(effect: StandingsEffect.OnRefresh)
-                }
-                
-            }else if(!viewModel.standingsUiModel.isEmpty){
-                SuccessContent(localStandings: localStandings, serverStandings: viewModel.standingsUiModel,useCache: false){
+            if(!viewModel.standingsUiModel.isEmpty){
+                SuccessContent(viewModel: viewModel){
                     viewModel.setEffect(effect: StandingsEffect.OnRefresh)
                 }
             }
+            
         }.task {
-            cancelable = viewModel.$useCache.sink{ useCache in
-                self.useCache = useCache
-            }
-            viewModel.setMockEnvo(mockEnvo: mockEnvo)
+            viewModel.setEffect(effect: StandingsEffect.GetCompetitions)
+        }.onAppear{
             viewModel.setEffect(effect: StandingsEffect.GetStandings)
         }
     }
 }
 
 private struct SuccessContent : View{
-    let localStandings:FetchedResults<StandingsUIDao>
-    let serverStandings:[StandingsUIModel]
-    let useCache:Bool
+    
+    let viewModel:StandingScreenViewModel
     let onRefresh:()->Void
     
     var body : some View{
@@ -62,16 +53,20 @@ private struct SuccessContent : View{
             
             HeaderContent(
                 imageName: "figure.soccer",
-                titleText:"Premier League Standings"
+                titleText:viewModel.headerTitle
             )
+            
+            if(!viewModel.competitions.isEmpty){
+                
+                CompetitionContent(
+                    competitions: viewModel.competitions, chosenCompetitionName: viewModel.headerTitle){ chosenCompetitionId,chosenCompetitionName in
+                        viewModel.setEffect(effect: StandingsEffect.OnCompetitionChosen(id: chosenCompetitionId, name: chosenCompetitionName))
+                    }
+            }
             
             ScrollView{
                 VStack(alignment:.leading){
-                    if(useCache){
-                        LocalStandings(localStandings: localStandings)
-                    }else{
-                        ServerStandings(standingsUiModel: serverStandings)
-                    }
+                    StandingsItem(standingsUiModel: viewModel.standingsUiModel)
                 }
                 .padding(.leading,20)
                 .padding(.trailing,20)
@@ -82,113 +77,6 @@ private struct SuccessContent : View{
             }
             .padding(.all,1)
         }
-    }
-}
-
-private func LocalItemsFirstPart(model:StandingsUIDao)->some View{
-    return HStack{VStack{
-        Image(systemName: "soccerball.circle")
-            .foregroundColor(Color.blue)
-        Text(model.points ?? "")
-            .font(.body)
-    }
-        
-        VStack{
-            Image(systemName: "figure.australian.football")
-                .foregroundColor(Color.blue)
-            Text(model.matches ?? "")
-                .font(.body)
-        }
-        
-        VStack{
-            Image(systemName: "checkmark.circle.fill")
-                .foregroundColor(Color.green)
-            Text(model.win ?? "")
-                .font(.body)
-        }
-    }
-}
-
-private func LocalItemsSecondPart(model:StandingsUIDao)->some View{
-    return HStack{ VStack{
-        Image(systemName: "hand.raised.fill")
-            .foregroundColor(Color.gray)
-        Text(model.draw ?? "")
-            .font(.body)
-    }
-        
-        VStack{
-            Image(systemName: "slash.circle.fill")
-                .foregroundColor(Color.red)
-            Text(model.lose ?? "")
-                .font(.callout)
-        }
-    }
-}
-
-private func LocalStandings(localStandings:FetchedResults<StandingsUIDao>)-> some View{
-    return ForEach(localStandings,id:\.id) { model in
-        HStack{
-            Text((model.position ?? "")+". "+(model.name?.replacingOccurrences(of: "&amp;", with: "&") ?? ""))
-                .font(.headline)
-            
-            Spacer()
-            
-            LocalItemsFirstPart(model: model)
-            LocalItemsSecondPart(model: model)
-        }
-        Divider()
-    }
-}
-
-private func ServerStandings(standingsUiModel:[StandingsUIModel])->some View{
-    
-    return ForEach(standingsUiModel,id:\.id) { model in
-        HStack{
-            Text(model.position+". "+model.name.replacingOccurrences(of: "&amp;", with: "&"))
-                .font(.headline)
-            
-            Spacer()
-            
-            HStack{
-                
-                VStack{
-                    Image(systemName: "soccerball.circle")
-                        .foregroundColor(Color.blue)
-                    Text(model.points)
-                        .font(.body)
-                }
-                
-                VStack{
-                    Image(systemName: "figure.australian.football")
-                        .foregroundColor(Color.blue)
-                    Text(model.matches)
-                        .font(.body)
-                }
-                
-                VStack{
-                    Image(systemName: "checkmark.circle.fill")
-                        .foregroundColor(Color.green)
-                    Text(model.win)
-                        .font(.body)
-                }
-                
-                VStack{
-                    Image(systemName: "hand.raised.fill")
-                        .foregroundColor(Color.gray)
-                    Text(model.draw)
-                        .font(.body)
-                }
-                
-                VStack{
-                    Image(systemName: "slash.circle.fill")
-                        .foregroundColor(Color.red)
-                    Text(model.lose)
-                        .font(.callout)
-                }
-            }
-        }
-        Divider()
     }
 }
 

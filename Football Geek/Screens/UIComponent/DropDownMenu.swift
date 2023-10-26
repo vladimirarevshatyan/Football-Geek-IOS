@@ -12,13 +12,13 @@ func DropDownMenu(
     labelText:String,
     labelImage:String?,
     items:[DropDownMenuItem],
-    onItemClick:@escaping (String)->Void
+    onItemClick:@escaping (DropDownMenuItem)->Void
 )-> some View{
     return Menu {
         
         ForEach(items){item in
             Button {
-                onItemClick(item.id)
+                onItemClick(item)
             } label: {
                 Label(item.title, systemImage: item.image ?? "")
             }

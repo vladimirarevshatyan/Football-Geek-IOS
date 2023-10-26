@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40CD72B2AEACAB400E722F1 /* CompetitionUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CD72A2AEACAB400E722F1 /* CompetitionUIModel.swift */; };
+		C40CD72E2AEAE91600E722F1 /* GetLocalStandingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40CD72D2AEAE91600E722F1 /* GetLocalStandingsUseCase.swift */; };
+		C4137DE22AE7200A00063761 /* DIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4137DE12AE7200A00063761 /* DIManager.swift */; };
+		C4137DE42AE725AE00063761 /* DIProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4137DE32AE725AE00063761 /* DIProperty.swift */; };
+		C4137DEA2AE72E1300063761 /* DIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4137DE92AE72E1200063761 /* DIExtensions.swift */; };
 		C42F20F22AD861A700D45D7B /* Football_GeekApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42F20F12AD861A700D45D7B /* Football_GeekApp.swift */; };
 		C42F20F82AD861A900D45D7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C42F20F72AD861A900D45D7B /* Assets.xcassets */; };
 		C42F20FB2AD861A900D45D7B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C42F20FA2AD861A900D45D7B /* Preview Assets.xcassets */; };
@@ -22,11 +27,35 @@
 		C43F2F362ADD9984002AB159 /* StandingsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43F2F352ADD9984002AB159 /* StandingsService.swift */; };
 		C43F2F3B2ADD9B5C002AB159 /* StandingsServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43F2F3A2ADD9B5C002AB159 /* StandingsServiceImpl.swift */; };
 		C43F2F3E2ADD9B8E002AB159 /* StandingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43F2F3D2ADD9B8E002AB159 /* StandingsModel.swift */; };
-		C43F2F412ADD9CD3002AB159 /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43F2F402ADD9CD3002AB159 /* TeamModel.swift */; };
-		C43F2F432ADD9D0A002AB159 /* StatsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43F2F422ADD9D0A002AB159 /* StatsModel.swift */; };
 		C43F2F4A2ADDA01F002AB159 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43F2F492ADDA01F002AB159 /* NetworkError.swift */; };
 		C43F2F4D2ADDA31C002AB159 /* GetStandingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43F2F4C2ADDA31C002AB159 /* GetStandingsUseCase.swift */; };
 		C43F2F4F2ADDA323002AB159 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C43F2F4E2ADDA323002AB159 /* UseCase.swift */; };
+		C457278C2AE058180054195B /* StandingsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C457278B2AE058180054195B /* StandingsData.swift */; };
+		C457278E2AE058360054195B /* StandingTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C457278D2AE058360054195B /* StandingTables.swift */; };
+		C45727912AE16CBC0054195B /* HomeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45727902AE16CBC0054195B /* HomeContent.swift */; };
+		C45727942AE16D5B0054195B /* SettingsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45727932AE16D5B0054195B /* SettingsContent.swift */; };
+		C45727972AE18FA90054195B /* SettingsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45727962AE18FA90054195B /* SettingsContract.swift */; };
+		C457279A2AE191950054195B /* CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45727992AE191950054195B /* CommonUI.swift */; };
+		C457279C2AE197280054195B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C457279B2AE197280054195B /* SettingsViewModel.swift */; };
+		C457279F2AE19A180054195B /* KeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C457279E2AE19A180054195B /* KeyValueStorage.swift */; };
+		C45727A12AE19C4F0054195B /* SaveCacheIsOnUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45727A02AE19C4F0054195B /* SaveCacheIsOnUseCase.swift */; };
+		C45727A32AE19D6F0054195B /* GetCacheCanBeUsed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45727A22AE19D6F0054195B /* GetCacheCanBeUsed.swift */; };
+		C45727A52AE19DC80054195B /* ArgumentedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45727A42AE19DC80054195B /* ArgumentedUseCase.swift */; };
+		C45727A82AE1A4D00054195B /* LocalData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C45727A62AE1A4D00054195B /* LocalData.xcdatamodeld */; };
+		C45727AA2AE1A6360054195B /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45727A92AE1A6360054195B /* PersistenceController.swift */; };
+		C46217192AE1CAE80076C04D /* ModelsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46217182AE1CAE80076C04D /* ModelsExtension.swift */; };
+		C485AE122AE1AB0A00627ED8 /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485AE112AE1AB0900627ED8 /* LocalRepository.swift */; };
+		C485AE142AE1AB3800627ED8 /* LocalRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485AE132AE1AB3800627ED8 /* LocalRepositoryImpl.swift */; };
+		C49CEA812AEAEA570049355C /* StandingsLocalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49CEA802AEAEA570049355C /* StandingsLocalModel.swift */; };
+		C49CEA832AEAEB0B0049355C /* ViewModelsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49CEA822AEAEB0B0049355C /* ViewModelsExtension.swift */; };
+		C4A362362AEAC24800AF4A2C /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A362352AEAC24800AF4A2C /* Competition.swift */; };
+		C4A362382AEAC48800AF4A2C /* StandingsItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A362372AEAC48800AF4A2C /* StandingsItems.swift */; };
+		C4A3623A2AEAC5A200AF4A2C /* StandingsCompetitionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A362392AEAC5A200AF4A2C /* StandingsCompetitionItem.swift */; };
+		C4A3623C2AEAC6D500AF4A2C /* GetCompetitionsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4A3623B2AEAC6D500AF4A2C /* GetCompetitionsUseCase.swift */; };
+		C4B66D562AE29AE00036777E /* TimeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4B66D552AE29AE00036777E /* TimeHelper.swift */; };
+		C4C8F0142AEB0FC000CA2587 /* RefreshLocalStandingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4C8F0132AEB0FC000CA2587 /* RefreshLocalStandingsUseCase.swift */; };
+		C4D508752AE8346100223896 /* DropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D508742AE8346100223896 /* DropDownMenu.swift */; };
+		C4D508772AE839C800223896 /* DropDownTimeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4D508762AE839C800223896 /* DropDownTimeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +76,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C40CD72A2AEACAB400E722F1 /* CompetitionUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionUIModel.swift; sourceTree = "<group>"; };
+		C40CD72D2AEAE91600E722F1 /* GetLocalStandingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocalStandingsUseCase.swift; sourceTree = "<group>"; };
+		C4137DE12AE7200A00063761 /* DIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIManager.swift; sourceTree = "<group>"; };
+		C4137DE32AE725AE00063761 /* DIProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIProperty.swift; sourceTree = "<group>"; };
+		C4137DE92AE72E1200063761 /* DIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIExtensions.swift; sourceTree = "<group>"; };
 		C42F20EE2AD861A700D45D7B /* Football Geek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Football Geek.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C42F20F12AD861A700D45D7B /* Football_GeekApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Football_GeekApp.swift; sourceTree = "<group>"; };
 		C42F20F72AD861A900D45D7B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,11 +99,35 @@
 		C43F2F352ADD9984002AB159 /* StandingsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsService.swift; sourceTree = "<group>"; };
 		C43F2F3A2ADD9B5C002AB159 /* StandingsServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsServiceImpl.swift; sourceTree = "<group>"; };
 		C43F2F3D2ADD9B8E002AB159 /* StandingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsModel.swift; sourceTree = "<group>"; };
-		C43F2F402ADD9CD3002AB159 /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
-		C43F2F422ADD9D0A002AB159 /* StatsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsModel.swift; sourceTree = "<group>"; };
 		C43F2F492ADDA01F002AB159 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		C43F2F4C2ADDA31C002AB159 /* GetStandingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStandingsUseCase.swift; sourceTree = "<group>"; };
 		C43F2F4E2ADDA323002AB159 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
+		C457278B2AE058180054195B /* StandingsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsData.swift; sourceTree = "<group>"; };
+		C457278D2AE058360054195B /* StandingTables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingTables.swift; sourceTree = "<group>"; };
+		C45727902AE16CBC0054195B /* HomeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContent.swift; sourceTree = "<group>"; };
+		C45727932AE16D5B0054195B /* SettingsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContent.swift; sourceTree = "<group>"; };
+		C45727962AE18FA90054195B /* SettingsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsContract.swift; sourceTree = "<group>"; };
+		C45727992AE191950054195B /* CommonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUI.swift; sourceTree = "<group>"; };
+		C457279B2AE197280054195B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		C457279E2AE19A180054195B /* KeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorage.swift; sourceTree = "<group>"; };
+		C45727A02AE19C4F0054195B /* SaveCacheIsOnUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCacheIsOnUseCase.swift; sourceTree = "<group>"; };
+		C45727A22AE19D6F0054195B /* GetCacheCanBeUsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCacheCanBeUsed.swift; sourceTree = "<group>"; };
+		C45727A42AE19DC80054195B /* ArgumentedUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentedUseCase.swift; sourceTree = "<group>"; };
+		C45727A72AE1A4D00054195B /* LocalData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalData.xcdatamodel; sourceTree = "<group>"; };
+		C45727A92AE1A6360054195B /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		C46217182AE1CAE80076C04D /* ModelsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsExtension.swift; sourceTree = "<group>"; };
+		C485AE112AE1AB0900627ED8 /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
+		C485AE132AE1AB3800627ED8 /* LocalRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepositoryImpl.swift; sourceTree = "<group>"; };
+		C49CEA802AEAEA570049355C /* StandingsLocalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsLocalModel.swift; sourceTree = "<group>"; };
+		C49CEA822AEAEB0B0049355C /* ViewModelsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelsExtension.swift; sourceTree = "<group>"; };
+		C4A362352AEAC24800AF4A2C /* Competition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
+		C4A362372AEAC48800AF4A2C /* StandingsItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsItems.swift; sourceTree = "<group>"; };
+		C4A362392AEAC5A200AF4A2C /* StandingsCompetitionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandingsCompetitionItem.swift; sourceTree = "<group>"; };
+		C4A3623B2AEAC6D500AF4A2C /* GetCompetitionsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCompetitionsUseCase.swift; sourceTree = "<group>"; };
+		C4B66D552AE29AE00036777E /* TimeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeHelper.swift; sourceTree = "<group>"; };
+		C4C8F0132AEB0FC000CA2587 /* RefreshLocalStandingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshLocalStandingsUseCase.swift; sourceTree = "<group>"; };
+		C4D508742AE8346100223896 /* DropDownMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownMenu.swift; sourceTree = "<group>"; };
+		C4D508762AE839C800223896 /* DropDownTimeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTimeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,9 +155,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C40CD72C2AEAE7F000E722F1 /* StandingsScreenItems */ = {
+			isa = PBXGroup;
+			children = (
+				C4A362372AEAC48800AF4A2C /* StandingsItems.swift */,
+				C4A362392AEAC5A200AF4A2C /* StandingsCompetitionItem.swift */,
+			);
+			path = StandingsScreenItems;
+			sourceTree = "<group>";
+		};
+		C4137DE02AE71FCC00063761 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				C4137DE12AE7200A00063761 /* DIManager.swift */,
+				C4137DE32AE725AE00063761 /* DIProperty.swift */,
+				C4137DE92AE72E1200063761 /* DIExtensions.swift */,
+			);
+			path = DI;
+			sourceTree = "<group>";
+		};
 		C42F20E52AD861A700D45D7B = {
 			isa = PBXGroup;
 			children = (
+				C45727A62AE1A4D00054195B /* LocalData.xcdatamodeld */,
 				C42F20F02AD861A700D45D7B /* Football Geek */,
 				C42F21032AD861A900D45D7B /* Football GeekTests */,
 				C42F210D2AD861A900D45D7B /* Football GeekUITests */,
@@ -120,12 +198,14 @@
 		C42F20F02AD861A700D45D7B /* Football Geek */ = {
 			isa = PBXGroup;
 			children = (
+				C4137DE02AE71FCC00063761 /* DI */,
+				C4B66D542AE29AD70036777E /* Utils */,
 				C43F2F4B2ADDA30E002AB159 /* UseCase */,
 				C43F2F3C2ADD9B7A002AB159 /* DAO */,
-				C43F2F342ADD9973002AB159 /* API */,
+				C43F2F342ADD9973002AB159 /* Repository */,
 				C42F212F2AD8802700D45D7B /* States */,
-				C42F21252AD86C9600D45D7B /* Views */,
-				C42F21222AD8691500D45D7B /* ViewModels */,
+				C42F21252AD86C9600D45D7B /* Screens */,
+				C42F21222AD8691500D45D7B /* Base */,
 				C42F211F2AD864B600D45D7B /* Models */,
 				C42F20F12AD861A700D45D7B /* Football_GeekApp.swift */,
 				C42F20F72AD861A900D45D7B /* Assets.xcassets */,
@@ -163,30 +243,37 @@
 			isa = PBXGroup;
 			children = (
 				C42F21202AD864CB00D45D7B /* StandingsUIModel.swift */,
+				C4D508762AE839C800223896 /* DropDownTimeModel.swift */,
+				C40CD72A2AEACAB400E722F1 /* CompetitionUIModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		C42F21222AD8691500D45D7B /* ViewModels */ = {
+		C42F21222AD8691500D45D7B /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				C42F21232AD8692800D45D7B /* StandingScreenViewModel.swift */,
+				C43F2F4E2ADDA323002AB159 /* UseCase.swift */,
 				C42F212B2AD87D6100D45D7B /* ViewModel.swift */,
 			);
-			path = ViewModels;
+			path = Base;
 			sourceTree = "<group>";
 		};
-		C42F21252AD86C9600D45D7B /* Views */ = {
+		C42F21252AD86C9600D45D7B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				C45727982AE191850054195B /* UIComponent */,
+				C45727922AE16D500054195B /* SettingsScreen */,
+				C457278F2AE16CAC0054195B /* HomeScreen */,
 				C42F21262AD86CA100D45D7B /* StandingsScreen */,
 			);
-			path = Views;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		C42F21262AD86CA100D45D7B /* StandingsScreen */ = {
 			isa = PBXGroup;
 			children = (
+				C40CD72C2AEAE7F000E722F1 /* StandingsScreenItems */,
+				C42F21232AD8692800D45D7B /* StandingScreenViewModel.swift */,
 				C42F211D2AD8647F00D45D7B /* StandingsContent.swift */,
 				C42F212D2AD87EE700D45D7B /* StandingsContract.swift */,
 			);
@@ -201,39 +288,41 @@
 			path = States;
 			sourceTree = "<group>";
 		};
-		C43F2F342ADD9973002AB159 /* API */ = {
+		C43F2F342ADD9973002AB159 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				C457279D2AE19A0B0054195B /* LocalRepository */,
 				C43F2F482ADDA013002AB159 /* Error */,
 				C43F2F352ADD9984002AB159 /* StandingsService.swift */,
 				C43F2F3A2ADD9B5C002AB159 /* StandingsServiceImpl.swift */,
 			);
-			path = API;
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		C43F2F3C2ADD9B7A002AB159 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
-				C43F2F3F2ADD9CC8002AB159 /* sstandings */,
+				C4A362352AEAC24800AF4A2C /* Competition.swift */,
+				C43F2F3F2ADD9CC8002AB159 /* Standings */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
 		};
-		C43F2F3F2ADD9CC8002AB159 /* sstandings */ = {
+		C43F2F3F2ADD9CC8002AB159 /* Standings */ = {
 			isa = PBXGroup;
 			children = (
 				C43F2F452ADD9E62002AB159 /* Request */,
 				C43F2F442ADD9E57002AB159 /* Response */,
 			);
-			path = sstandings;
+			path = Standings;
 			sourceTree = "<group>";
 		};
 		C43F2F442ADD9E57002AB159 /* Response */ = {
 			isa = PBXGroup;
 			children = (
 				C43F2F3D2ADD9B8E002AB159 /* StandingsModel.swift */,
-				C43F2F402ADD9CD3002AB159 /* TeamModel.swift */,
-				C43F2F422ADD9D0A002AB159 /* StatsModel.swift */,
+				C457278B2AE058180054195B /* StandingsData.swift */,
+				C457278D2AE058360054195B /* StandingTables.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -249,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				C43F2F492ADDA01F002AB159 /* NetworkError.swift */,
+				C49CEA802AEAEA570049355C /* StandingsLocalModel.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -257,9 +347,62 @@
 			isa = PBXGroup;
 			children = (
 				C43F2F4C2ADDA31C002AB159 /* GetStandingsUseCase.swift */,
-				C43F2F4E2ADDA323002AB159 /* UseCase.swift */,
+				C45727A02AE19C4F0054195B /* SaveCacheIsOnUseCase.swift */,
+				C45727A22AE19D6F0054195B /* GetCacheCanBeUsed.swift */,
+				C45727A42AE19DC80054195B /* ArgumentedUseCase.swift */,
+				C4A3623B2AEAC6D500AF4A2C /* GetCompetitionsUseCase.swift */,
+				C40CD72D2AEAE91600E722F1 /* GetLocalStandingsUseCase.swift */,
+				C4C8F0132AEB0FC000CA2587 /* RefreshLocalStandingsUseCase.swift */,
 			);
 			path = UseCase;
+			sourceTree = "<group>";
+		};
+		C457278F2AE16CAC0054195B /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C45727902AE16CBC0054195B /* HomeContent.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		C45727922AE16D500054195B /* SettingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C457279B2AE197280054195B /* SettingsViewModel.swift */,
+				C45727932AE16D5B0054195B /* SettingsContent.swift */,
+				C45727962AE18FA90054195B /* SettingsContract.swift */,
+			);
+			path = SettingsScreen;
+			sourceTree = "<group>";
+		};
+		C45727982AE191850054195B /* UIComponent */ = {
+			isa = PBXGroup;
+			children = (
+				C4D508742AE8346100223896 /* DropDownMenu.swift */,
+				C45727992AE191950054195B /* CommonUI.swift */,
+			);
+			path = UIComponent;
+			sourceTree = "<group>";
+		};
+		C457279D2AE19A0B0054195B /* LocalRepository */ = {
+			isa = PBXGroup;
+			children = (
+				C457279E2AE19A180054195B /* KeyValueStorage.swift */,
+				C45727A92AE1A6360054195B /* PersistenceController.swift */,
+				C485AE112AE1AB0900627ED8 /* LocalRepository.swift */,
+				C485AE132AE1AB3800627ED8 /* LocalRepositoryImpl.swift */,
+			);
+			path = LocalRepository;
+			sourceTree = "<group>";
+		};
+		C4B66D542AE29AD70036777E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C46217182AE1CAE80076C04D /* ModelsExtension.swift */,
+				C4B66D552AE29AE00036777E /* TimeHelper.swift */,
+				C49CEA822AEAEB0B0049355C /* ViewModelsExtension.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,21 +535,50 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C45727912AE16CBC0054195B /* HomeContent.swift in Sources */,
 				C43F2F4F2ADDA323002AB159 /* UseCase.swift in Sources */,
+				C485AE142AE1AB3800627ED8 /* LocalRepositoryImpl.swift in Sources */,
+				C457278E2AE058360054195B /* StandingTables.swift in Sources */,
 				C42F212C2AD87D6100D45D7B /* ViewModel.swift in Sources */,
+				C485AE122AE1AB0A00627ED8 /* LocalRepository.swift in Sources */,
+				C4A3623A2AEAC5A200AF4A2C /* StandingsCompetitionItem.swift in Sources */,
+				C45727A32AE19D6F0054195B /* GetCacheCanBeUsed.swift in Sources */,
+				C46217192AE1CAE80076C04D /* ModelsExtension.swift in Sources */,
+				C45727A12AE19C4F0054195B /* SaveCacheIsOnUseCase.swift in Sources */,
 				C43F2F3E2ADD9B8E002AB159 /* StandingsModel.swift in Sources */,
 				C42F21242AD8692800D45D7B /* StandingScreenViewModel.swift in Sources */,
+				C45727972AE18FA90054195B /* SettingsContract.swift in Sources */,
 				C42F20F22AD861A700D45D7B /* Football_GeekApp.swift in Sources */,
+				C457279A2AE191950054195B /* CommonUI.swift in Sources */,
+				C4137DEA2AE72E1300063761 /* DIExtensions.swift in Sources */,
 				C42F212E2AD87EE700D45D7B /* StandingsContract.swift in Sources */,
+				C49CEA812AEAEA570049355C /* StandingsLocalModel.swift in Sources */,
 				C42F21332AD8803F00D45D7B /* UIEffect.swift in Sources */,
 				C42F211E2AD8647F00D45D7B /* StandingsContent.swift in Sources */,
+				C457279F2AE19A180054195B /* KeyValueStorage.swift in Sources */,
 				C43F2F362ADD9984002AB159 /* StandingsService.swift in Sources */,
+				C45727942AE16D5B0054195B /* SettingsContent.swift in Sources */,
+				C4D508752AE8346100223896 /* DropDownMenu.swift in Sources */,
 				C43F2F4D2ADDA31C002AB159 /* GetStandingsUseCase.swift in Sources */,
-				C43F2F412ADD9CD3002AB159 /* TeamModel.swift in Sources */,
+				C457279C2AE197280054195B /* SettingsViewModel.swift in Sources */,
+				C4137DE22AE7200A00063761 /* DIManager.swift in Sources */,
+				C45727A82AE1A4D00054195B /* LocalData.xcdatamodeld in Sources */,
 				C43F2F3B2ADD9B5C002AB159 /* StandingsServiceImpl.swift in Sources */,
+				C457278C2AE058180054195B /* StandingsData.swift in Sources */,
 				C43F2F4A2ADDA01F002AB159 /* NetworkError.swift in Sources */,
+				C4D508772AE839C800223896 /* DropDownTimeModel.swift in Sources */,
+				C49CEA832AEAEB0B0049355C /* ViewModelsExtension.swift in Sources */,
+				C4B66D562AE29AE00036777E /* TimeHelper.swift in Sources */,
+				C4A362362AEAC24800AF4A2C /* Competition.swift in Sources */,
+				C4C8F0142AEB0FC000CA2587 /* RefreshLocalStandingsUseCase.swift in Sources */,
+				C45727AA2AE1A6360054195B /* PersistenceController.swift in Sources */,
+				C4137DE42AE725AE00063761 /* DIProperty.swift in Sources */,
 				C42F21212AD864CB00D45D7B /* StandingsUIModel.swift in Sources */,
-				C43F2F432ADD9D0A002AB159 /* StatsModel.swift in Sources */,
+				C4A3623C2AEAC6D500AF4A2C /* GetCompetitionsUseCase.swift in Sources */,
+				C40CD72B2AEACAB400E722F1 /* CompetitionUIModel.swift in Sources */,
+				C4A362382AEAC48800AF4A2C /* StandingsItems.swift in Sources */,
+				C45727A52AE19DC80054195B /* ArgumentedUseCase.swift in Sources */,
+				C40CD72E2AEAE91600E722F1 /* GetLocalStandingsUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -736,6 +908,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C45727A62AE1A4D00054195B /* LocalData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C45727A72AE1A4D00054195B /* LocalData.xcdatamodel */,
+			);
+			currentVersion = C45727A72AE1A4D00054195B /* LocalData.xcdatamodel */;
+			path = LocalData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C42F20E62AD861A700D45D7B /* Project object */;
 }

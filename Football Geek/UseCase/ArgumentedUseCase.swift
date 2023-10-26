@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+
+protocol ArgumentedUseCase {
+    
+    associatedtype ReturnType
+    
+    associatedtype ArgumentType
+    
+    func execute(argument:ArgumentType, result:()->ReturnType) async
+}

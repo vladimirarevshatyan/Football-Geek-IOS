@@ -8,23 +8,10 @@
 import Foundation
 
 
-class SettingsEffect : UIEffect{
+enum SettingsEffect : UIEffect{
     
-    class OnCacheToggleStateChange : SettingsEffect{
-        let value:Bool
-        init(value: Bool) {
-            self.value = value
-        }
-    }
-    
-    class GetCacheToggleState : SettingsEffect{}
-    
-    class OnStandingsCacheTimeSelected : SettingsEffect{
-        let id:String
-        init(id: String) {
-            self.id = id
-        }
-    }
-    
-    class GetUITexts : SettingsEffect{}
+    case OnCacheToggleStateChange(value:Bool)
+    case GetCacheToggleState
+    case OnStandingsCacheTimeSelected(id:String)
+    case GetUITexts
 }

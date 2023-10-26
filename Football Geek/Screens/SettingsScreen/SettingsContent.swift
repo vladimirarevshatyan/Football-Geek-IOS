@@ -58,8 +58,8 @@ struct SettingsContent  : View{
                     
                     Spacer()
                     
-                    DropDownMenu(labelText: viewModel.selectedCacheTimeText ?? "Choose Time", labelImage:nil, items: dropDownItems){itemId in
-                        viewModel.setEffect(effect: SettingsEffect.OnStandingsCacheTimeSelected(id: itemId))
+                    DropDownMenu(labelText: viewModel.selectedCacheTimeText ?? "Choose Time", labelImage:nil, items: dropDownItems){item in
+                        viewModel.setEffect(effect: SettingsEffect.OnStandingsCacheTimeSelected(id: item.id))
                     }
                 }.padding(.top,30)
                 
@@ -67,8 +67,8 @@ struct SettingsContent  : View{
                 cancelable = viewModel.$isCacheOn.sink { value in
                     isCachenOn = value
                 }
-                viewModel.setEffect(effect: SettingsEffect.GetCacheToggleState())
-                viewModel.setEffect(effect: SettingsEffect.GetUITexts())
+                viewModel.setEffect(effect: SettingsEffect.GetCacheToggleState)
+                viewModel.setEffect(effect: SettingsEffect.GetUITexts)
             }
             .padding()
             .frame(maxWidth: .infinity,maxHeight: .infinity,alignment: .topLeading)

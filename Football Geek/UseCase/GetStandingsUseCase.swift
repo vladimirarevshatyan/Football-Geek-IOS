@@ -6,19 +6,28 @@
 //
 
 import Foundation
+import SwiftUI
+import CoreData
 
 
 class GetStandingsUseCase : UseCase{
     
-    init(standingsService: StandingsService) {
-        self.standingsService = standingsService
-    }
+    typealias ReturnType = [StandingTables]
+    typealias ErrorType = NetworkError
+    typealias Argument = Competition
     
-    private let standingsService:StandingsService
+    @Inject private var localRepository:LocalRepositoryImpl
     
-    typealias ReturnType = [StandingsModel]
     
-    func execute(onSuccess: @escaping ([StandingsModel]) -> Void, onError:@escaping () -> Void) {
-        standingsService.getStandings(onSuccess: onSuccess, onError: onError)
+    @Inject private var standingsService:StandingsServiceImpl
+    
+    func execute(argument: Competition?) async -> [StandingTables] {
+        let standings =  try? await standingsService.getStandings(competition: argument ?? Competition.EnglishPremierLeague)
+        
+        if(standings != nil){
+            await localRepository.saveStandings(standings: standings?.data.table ?? [], competitionId: argument?.rawValue ?? Competition.EnglishPremierLeague.rawValue)
+        }
+        
+        return standings?.data.table ?? []
     }
 }

@@ -8,7 +8,12 @@
 import Foundation
 
 struct StandingsUIModel{
-    let id = UUID()
-    var name:String
-    var abbrevation:String
+    let id:String
+    let position:String
+    let name:String
+    let win:String
+    let draw:String
+    let lose:String
+    let points:String
+    let matches:String
 }

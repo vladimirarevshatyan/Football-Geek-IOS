@@ -13,3 +13,17 @@ enum Competition : String,CaseIterable {
     case SerieACompetition = "4"
     case LaLigaSantander = "3"
 }
+
+extension Competition{
+    func getCompetitionName()->String{
+        switch(self){
+            
+        case .EnglishPremierLeague:
+            return "English Premier League"
+        case .SerieACompetition:
+            return "Serie A"
+        case .LaLigaSantander:
+            return "LaLiga Santander"
+        }
+    }
+}

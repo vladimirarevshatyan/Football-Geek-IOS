@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+
+struct DropDownTimeModel {
+    static let  ThirtyMinutes = "30m"
+    static let  OneHour = "1h"
+}

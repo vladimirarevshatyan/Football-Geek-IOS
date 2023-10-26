@@ -13,19 +13,15 @@ class LocalRepositoryImpl : LocalRepository{
     
     @Inject private var persistenceController:PersistenceController
     
-    func saveStandings(standings: [StandingTables],competitionId:String) {
+    func saveStandings(standings: [StandingTables],competitionId:String) async {
         
-        let mockEnvo = persistenceController.container.viewContext
+        let mockEnvo = persistenceController.context
         
         mockEnvo.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
         
-        ForEach(standings){ model in 
+        let _ = standings.map { model in
             
-        }
-        
-        standings.map { model in
-            
-            let daoObject = StandingsUIDao(context: mockEnvo)
+            let daoObject = StandingsLocalModel(context: mockEnvo)
             daoObject.id = model.name
             daoObject.position = model.rank
             daoObject.name = model.name
@@ -45,11 +41,20 @@ class LocalRepositoryImpl : LocalRepository{
     }
 
     
-    func getLocalStandings()-> [StandingsUIDao]{
+    func getLocalStandings(competitionId:String) async -> [StandingsLocalModel]{
         
+        let fetchRequest: NSFetchRequest<StandingsLocalModel> = StandingsLocalModel.standingsFetchRequest
+           let search = NSPredicate(format: "competitionId CONTAINS %@", competitionId)
+           fetchRequest.predicate = search
+           do {
+               let predicateItem =  try persistenceController.context.fetch(fetchRequest)
+               return predicateItem
+           } catch {
+               return []
+           }
     }
     
-    func refreshData(){
-        persistenceController.container.viewContext.refreshAllObjects()
+    func refreshData() async{
+        persistenceController.context.refreshAllObjects()
     }
 }

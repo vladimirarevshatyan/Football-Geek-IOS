@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+
+extension ViewModel{
+    
+    func onUI(caller:@escaping ()->Void){
+        DispatchQueue.main.async {
+            caller()
+        }
+    }
+}

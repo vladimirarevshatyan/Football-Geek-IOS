@@ -10,30 +10,36 @@ import CoreData
 
 
 class GetCacheCanBeUsed : UseCase{
-    
-    typealias LocalDataReturnType = Void
-    
-    
-    @Inject 
-    private var localRepoHelper:LocalRepoHelper
-    @Inject
-    private var timeHelper:TimeHelper
-    
+
+    typealias Argument = String
     typealias ReturnType = Bool
     
-    typealias ErrorType = Void
     
-    func execute(onSuccess: @escaping (Bool) -> Void, onError: @escaping (Void) -> Void) {
+    @Inject private var localRepoHelper:KeyValueStorage
+    @Inject private var timeHelper:TimeHelper
+    @Inject private var localRepository:LocalRepositoryImpl
+    
+    
+    func execute(argument: String?) async -> Bool {
+        
         let millisForStandingCache =  self.localRepoHelper.getDouble(key: DefaultsKeys.standingsCacheMillis)
         let date =  timeHelper.dateFromDouble(double: millisForStandingCache)
-        let diffInSeconds = timeHelper.differenceInSeconds(firstTime: date, secondTime: timeHelper.getCurrentDate())
+        let diffInMinutes = timeHelper.differenceInMinutes(firstTime: date, secondTime: timeHelper.getCurrentDate())
+        var threshold = localRepoHelper.getInt(key: DefaultsKeys.selectedStandingsCacheTime)
         
-        if(diffInSeconds<=25 && localRepoHelper.getCacheIsOn()){
-            onSuccess(true)
+        if(threshold<=0){
+            threshold = 30
+        }
+        
+        let localItemsNotEmpty = await !localRepository.getLocalStandings(competitionId: argument ?? Competition.EnglishPremierLeague.rawValue).isEmpty
+        
+        if(diffInMinutes<=threshold && localRepoHelper.getCacheIsOn() && localItemsNotEmpty){
+            return true
         }else{
-            onSuccess(false)
+            if(localRepoHelper.getCacheIsOn()){
+                localRepoHelper.saveDouble(value: timeHelper.getCurrentMillis(), key: DefaultsKeys.standingsCacheMillis)
+            }
+          return false
         }
     }
-    
-    func setMockEnvo(mockEnvo: NSManagedObjectContext) {}
 }

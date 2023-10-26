@@ -10,5 +10,7 @@ import SwiftUI
 import CoreData
 
 protocol LocalRepository {
-    func saveStandings(standings:[StandingTables],competitionId:String)
+    func saveStandings(standings:[StandingTables],competitionId:String) async
+    func getLocalStandings(competitionId:String)async -> [StandingsLocalModel]
+    func refreshData() async
 }

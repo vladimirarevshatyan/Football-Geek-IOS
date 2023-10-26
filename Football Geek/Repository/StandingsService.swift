@@ -6,7 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
+import CoreData
 
 protocol StandingsService{
-    func getStandings(onSuccess:@escaping (StandingsModel)->Void,onError:@escaping ()->Void)
+    func getStandings(competition:Competition)async throws->StandingsModel
 }

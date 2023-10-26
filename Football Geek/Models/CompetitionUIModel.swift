@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct CompetitionUIModel : Identifiable{
+    let id:String
+    let competitionName:String
+}

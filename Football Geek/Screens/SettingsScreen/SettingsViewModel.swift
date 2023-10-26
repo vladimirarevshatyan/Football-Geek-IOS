@@ -19,7 +19,7 @@ class SettingsViewModel : ViewModel<SettingsEffect>{
     @Inject
     private var getCacgeIsOnUseCase: GetCacheCanBeUsed
     @Inject
-    private var localRepoHelper:LocalRepoHelper
+    private var localRepoHelper:KeyValueStorage
     @Inject
     private var timeHelper:TimeHelper
     
@@ -29,20 +29,17 @@ class SettingsViewModel : ViewModel<SettingsEffect>{
         
         switch(effect){
             
-        case is SettingsEffect.OnCacheToggleStateChange:
-            saveToggleState(value: (effect as! SettingsEffect.OnCacheToggleStateChange).value)
+        case .OnCacheToggleStateChange(let value):
+            saveToggleState(value: value)
             
-        case is SettingsEffect.GetCacheToggleState:
+        case .GetCacheToggleState:
             isCacheOn =  localRepoHelper.getCacheIsOn()
             
-        case is SettingsEffect.OnStandingsCacheTimeSelected:
-            let id = (effect as! SettingsEffect.OnStandingsCacheTimeSelected).id
+        case .OnStandingsCacheTimeSelected(let id):
             saveStandingCacheTime(id: id)
             
-        case is SettingsEffect.GetUITexts:
+        case .GetUITexts:
             getSelectedCacheTimeText()
-        default:
-            Void()
         }
     }
     
@@ -50,7 +47,9 @@ class SettingsViewModel : ViewModel<SettingsEffect>{
         let previousValue = localRepoHelper.getCacheIsOn()
         if(previousValue != value){
             localRepoHelper.saveDouble(value: timeHelper.getCurrentMillis(), key: DefaultsKeys.standingsCacheMillis)
-            saveCacheIsOnUseCase.execute(argument: value, result: {})
+            Task {
+                await self.saveCacheIsOnUseCase.execute(argument: value, result: {})
+            }
         }
     }
     
