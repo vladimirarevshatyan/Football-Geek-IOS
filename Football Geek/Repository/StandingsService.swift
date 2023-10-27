@@ -11,4 +11,5 @@ import CoreData
 
 protocol StandingsService{
     func getStandings(competition:Competition)async throws->StandingsModel
+    func getUefaStandings() async throws -> [String: [StandingTables]]
 }

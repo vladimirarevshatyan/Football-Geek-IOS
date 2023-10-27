@@ -24,6 +24,18 @@ class KeyValueStorage{
         )
     }
     
+    func getBool(key:String)->Bool{
+        return defaults.bool(forKey: key)
+    }
+    
+    func saveBool(value:Bool,key:String){
+        let defaults = UserDefaults.standard
+        defaults.set(
+            value,
+            forKey: key
+        )
+    }
+    
     func saveDouble(value:Double,key:String){
         let defaults = UserDefaults.standard
         defaults.set(
@@ -65,8 +77,12 @@ class KeyValueStorage{
 
 struct DefaultsKeys {
     static let cacheOnKey = "isCacheOn"
+    static let uefaCacheOnKey = "uefaCacheOn"
     static let standingsCacheMillis = "standing_cache_millis"
+    static let uefaStandingsCacheMillis = "uefa_standing_cache_millis"
     static let selectedStandingCacheTimeId = "selected_standing_cache_time_id"
+    static let selecteUefadStandingCacheTimeId = "selected_uefa_standing_cache_time_id"
+    static let selecteUefadStandingCacheTime = "selected_uefa_standing_cache_time"
     static let selectedStandingsCacheTime = "selected_standing_cache_time"
     static let chosenCompetitionId = "chosen_competition_id"
 }

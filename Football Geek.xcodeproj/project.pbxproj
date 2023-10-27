@@ -38,11 +38,22 @@
 		C457279C2AE197280054195B /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C457279B2AE197280054195B /* SettingsViewModel.swift */; };
 		C457279F2AE19A180054195B /* KeyValueStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C457279E2AE19A180054195B /* KeyValueStorage.swift */; };
 		C45727A12AE19C4F0054195B /* SaveCacheIsOnUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45727A02AE19C4F0054195B /* SaveCacheIsOnUseCase.swift */; };
-		C45727A32AE19D6F0054195B /* GetCacheCanBeUsed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45727A22AE19D6F0054195B /* GetCacheCanBeUsed.swift */; };
+		C45727A32AE19D6F0054195B /* GetStandingsCacheCanBeUsed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45727A22AE19D6F0054195B /* GetStandingsCacheCanBeUsed.swift */; };
 		C45727A52AE19DC80054195B /* ArgumentedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45727A42AE19DC80054195B /* ArgumentedUseCase.swift */; };
 		C45727A82AE1A4D00054195B /* LocalData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C45727A62AE1A4D00054195B /* LocalData.xcdatamodeld */; };
 		C45727AA2AE1A6360054195B /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45727A92AE1A6360054195B /* PersistenceController.swift */; };
 		C46217192AE1CAE80076C04D /* ModelsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C46217182AE1CAE80076C04D /* ModelsExtension.swift */; };
+		C479C1D82AEC0B2000A7F19B /* URLConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479C1D72AEC0B2000A7F19B /* URLConstants.swift */; };
+		C479C1DA2AEC111500A7F19B /* UefaStandingsUIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479C1D92AEC111500A7F19B /* UefaStandingsUIModel.swift */; };
+		C479C1DE2AEC1F9F00A7F19B /* ArrayExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479C1DD2AEC1F9F00A7F19B /* ArrayExtension.swift */; };
+		C479C1E02AEC20AD00A7F19B /* GetUefaStandingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479C1DF2AEC20AD00A7F19B /* GetUefaStandingsUseCase.swift */; };
+		C479C1E22AEC20B700A7F19B /* GetLocalUefaStandingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479C1E12AEC20B700A7F19B /* GetLocalUefaStandingsUseCase.swift */; };
+		C479C1E52AEC23AC00A7F19B /* UefaStandingsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479C1E42AEC23AC00A7F19B /* UefaStandingsContent.swift */; };
+		C479C1E72AEC23B800A7F19B /* UefaStandingsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479C1E62AEC23B800A7F19B /* UefaStandingsContract.swift */; };
+		C479C1E92AEC23C300A7F19B /* UefaStandingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479C1E82AEC23C300A7F19B /* UefaStandingsViewModel.swift */; };
+		C479C1EC2AEC248400A7F19B /* UseCaseModules.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479C1EB2AEC248400A7F19B /* UseCaseModules.swift */; };
+		C479C1EE2AEC24CF00A7F19B /* Module.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479C1ED2AEC24CF00A7F19B /* Module.swift */; };
+		C479C1F02AEC421B00A7F19B /* GetUefaStandingsCanBeUsed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C479C1EF2AEC421B00A7F19B /* GetUefaStandingsCanBeUsed.swift */; };
 		C485AE122AE1AB0A00627ED8 /* LocalRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485AE112AE1AB0900627ED8 /* LocalRepository.swift */; };
 		C485AE142AE1AB3800627ED8 /* LocalRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = C485AE132AE1AB3800627ED8 /* LocalRepositoryImpl.swift */; };
 		C496FA3A2AEB33C300140CA2 /* GetLocalStandingsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C496FA392AEB33C300140CA2 /* GetLocalStandingsUseCase.swift */; };
@@ -113,11 +124,22 @@
 		C457279B2AE197280054195B /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		C457279E2AE19A180054195B /* KeyValueStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStorage.swift; sourceTree = "<group>"; };
 		C45727A02AE19C4F0054195B /* SaveCacheIsOnUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveCacheIsOnUseCase.swift; sourceTree = "<group>"; };
-		C45727A22AE19D6F0054195B /* GetCacheCanBeUsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCacheCanBeUsed.swift; sourceTree = "<group>"; };
+		C45727A22AE19D6F0054195B /* GetStandingsCacheCanBeUsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStandingsCacheCanBeUsed.swift; sourceTree = "<group>"; };
 		C45727A42AE19DC80054195B /* ArgumentedUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentedUseCase.swift; sourceTree = "<group>"; };
 		C45727A72AE1A4D00054195B /* LocalData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LocalData.xcdatamodel; sourceTree = "<group>"; };
 		C45727A92AE1A6360054195B /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		C46217182AE1CAE80076C04D /* ModelsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsExtension.swift; sourceTree = "<group>"; };
+		C479C1D72AEC0B2000A7F19B /* URLConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConstants.swift; sourceTree = "<group>"; };
+		C479C1D92AEC111500A7F19B /* UefaStandingsUIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UefaStandingsUIModel.swift; sourceTree = "<group>"; };
+		C479C1DD2AEC1F9F00A7F19B /* ArrayExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtension.swift; sourceTree = "<group>"; };
+		C479C1DF2AEC20AD00A7F19B /* GetUefaStandingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUefaStandingsUseCase.swift; sourceTree = "<group>"; };
+		C479C1E12AEC20B700A7F19B /* GetLocalUefaStandingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocalUefaStandingsUseCase.swift; sourceTree = "<group>"; };
+		C479C1E42AEC23AC00A7F19B /* UefaStandingsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UefaStandingsContent.swift; sourceTree = "<group>"; };
+		C479C1E62AEC23B800A7F19B /* UefaStandingsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UefaStandingsContract.swift; sourceTree = "<group>"; };
+		C479C1E82AEC23C300A7F19B /* UefaStandingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UefaStandingsViewModel.swift; sourceTree = "<group>"; };
+		C479C1EB2AEC248400A7F19B /* UseCaseModules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseModules.swift; sourceTree = "<group>"; };
+		C479C1ED2AEC24CF00A7F19B /* Module.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Module.swift; sourceTree = "<group>"; };
+		C479C1EF2AEC421B00A7F19B /* GetUefaStandingsCanBeUsed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUefaStandingsCanBeUsed.swift; sourceTree = "<group>"; };
 		C485AE112AE1AB0900627ED8 /* LocalRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepository.swift; sourceTree = "<group>"; };
 		C485AE132AE1AB3800627ED8 /* LocalRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalRepositoryImpl.swift; sourceTree = "<group>"; };
 		C496FA392AEB33C300140CA2 /* GetLocalStandingsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLocalStandingsUseCase.swift; sourceTree = "<group>"; };
@@ -205,6 +227,7 @@
 		C42F20F02AD861A700D45D7B /* Football Geek */ = {
 			isa = PBXGroup;
 			children = (
+				C479C1EA2AEC247600A7F19B /* Modules */,
 				C4137DE02AE71FCC00063761 /* DI */,
 				C4B66D542AE29AD70036777E /* Utils */,
 				C43F2F4B2ADDA30E002AB159 /* UseCase */,
@@ -252,6 +275,7 @@
 				C42F21202AD864CB00D45D7B /* StandingsUIModel.swift */,
 				C4D508762AE839C800223896 /* DropDownTimeModel.swift */,
 				C40CD72A2AEACAB400E722F1 /* CompetitionUIModel.swift */,
+				C479C1D92AEC111500A7F19B /* UefaStandingsUIModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -269,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				C45727982AE191850054195B /* UIComponent */,
+				C479C1E32AEC239600A7F19B /* UefaStandingsScreen */,
 				C45727922AE16D500054195B /* SettingsScreen */,
 				C457278F2AE16CAC0054195B /* HomeScreen */,
 				C42F21262AD86CA100D45D7B /* StandingsScreen */,
@@ -302,6 +327,7 @@
 				C43F2F482ADDA013002AB159 /* Error */,
 				C43F2F352ADD9984002AB159 /* StandingsService.swift */,
 				C43F2F3A2ADD9B5C002AB159 /* StandingsServiceImpl.swift */,
+				C479C1D72AEC0B2000A7F19B /* URLConstants.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -355,11 +381,14 @@
 			children = (
 				C43F2F4C2ADDA31C002AB159 /* GetStandingsUseCase.swift */,
 				C45727A02AE19C4F0054195B /* SaveCacheIsOnUseCase.swift */,
-				C45727A22AE19D6F0054195B /* GetCacheCanBeUsed.swift */,
+				C45727A22AE19D6F0054195B /* GetStandingsCacheCanBeUsed.swift */,
 				C45727A42AE19DC80054195B /* ArgumentedUseCase.swift */,
 				C4A3623B2AEAC6D500AF4A2C /* GetCompetitionsUseCase.swift */,
 				C4C8F0132AEB0FC000CA2587 /* RefreshLocalStandingsUseCase.swift */,
 				C496FA392AEB33C300140CA2 /* GetLocalStandingsUseCase.swift */,
+				C479C1DF2AEC20AD00A7F19B /* GetUefaStandingsUseCase.swift */,
+				C479C1E12AEC20B700A7F19B /* GetLocalUefaStandingsUseCase.swift */,
+				C479C1EF2AEC421B00A7F19B /* GetUefaStandingsCanBeUsed.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -402,6 +431,25 @@
 			path = LocalRepository;
 			sourceTree = "<group>";
 		};
+		C479C1E32AEC239600A7F19B /* UefaStandingsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				C479C1E42AEC23AC00A7F19B /* UefaStandingsContent.swift */,
+				C479C1E62AEC23B800A7F19B /* UefaStandingsContract.swift */,
+				C479C1E82AEC23C300A7F19B /* UefaStandingsViewModel.swift */,
+			);
+			path = UefaStandingsScreen;
+			sourceTree = "<group>";
+		};
+		C479C1EA2AEC247600A7F19B /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				C479C1EB2AEC248400A7F19B /* UseCaseModules.swift */,
+				C479C1ED2AEC24CF00A7F19B /* Module.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
 		C4B66D542AE29AD70036777E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,6 +457,7 @@
 				C4B66D552AE29AE00036777E /* TimeHelper.swift */,
 				C49CEA822AEAEB0B0049355C /* ViewModelsExtension.swift */,
 				C4C8F0182AEB18AB00CA2587 /* Connectivity.swift */,
+				C479C1DD2AEC1F9F00A7F19B /* ArrayExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -552,22 +601,28 @@
 				C45727912AE16CBC0054195B /* HomeContent.swift in Sources */,
 				C43F2F4F2ADDA323002AB159 /* UseCase.swift in Sources */,
 				C4C8F0192AEB18AB00CA2587 /* Connectivity.swift in Sources */,
+				C479C1D82AEC0B2000A7F19B /* URLConstants.swift in Sources */,
 				C485AE142AE1AB3800627ED8 /* LocalRepositoryImpl.swift in Sources */,
 				C457278E2AE058360054195B /* StandingTables.swift in Sources */,
 				C42F212C2AD87D6100D45D7B /* ViewModel.swift in Sources */,
 				C485AE122AE1AB0A00627ED8 /* LocalRepository.swift in Sources */,
+				C479C1E52AEC23AC00A7F19B /* UefaStandingsContent.swift in Sources */,
 				C4A3623A2AEAC5A200AF4A2C /* StandingsCompetitionItem.swift in Sources */,
-				C45727A32AE19D6F0054195B /* GetCacheCanBeUsed.swift in Sources */,
+				C45727A32AE19D6F0054195B /* GetStandingsCacheCanBeUsed.swift in Sources */,
 				C46217192AE1CAE80076C04D /* ModelsExtension.swift in Sources */,
 				C45727A12AE19C4F0054195B /* SaveCacheIsOnUseCase.swift in Sources */,
 				C43F2F3E2ADD9B8E002AB159 /* StandingsModel.swift in Sources */,
 				C496FA3A2AEB33C300140CA2 /* GetLocalStandingsUseCase.swift in Sources */,
 				C42F21242AD8692800D45D7B /* StandingScreenViewModel.swift in Sources */,
 				C45727972AE18FA90054195B /* SettingsContract.swift in Sources */,
+				C479C1E92AEC23C300A7F19B /* UefaStandingsViewModel.swift in Sources */,
 				C42F20F22AD861A700D45D7B /* Football_GeekApp.swift in Sources */,
 				C457279A2AE191950054195B /* CommonUI.swift in Sources */,
+				C479C1EC2AEC248400A7F19B /* UseCaseModules.swift in Sources */,
+				C479C1DE2AEC1F9F00A7F19B /* ArrayExtension.swift in Sources */,
 				C4137DEA2AE72E1300063761 /* DIExtensions.swift in Sources */,
 				C42F212E2AD87EE700D45D7B /* StandingsContract.swift in Sources */,
+				C479C1E22AEC20B700A7F19B /* GetLocalUefaStandingsUseCase.swift in Sources */,
 				C49CEA812AEAEA570049355C /* StandingsLocalModel.swift in Sources */,
 				C42F21332AD8803F00D45D7B /* UIEffect.swift in Sources */,
 				C42F211E2AD8647F00D45D7B /* StandingsContent.swift in Sources */,
@@ -578,13 +633,17 @@
 				C4D508752AE8346100223896 /* DropDownMenu.swift in Sources */,
 				C43F2F4D2ADDA31C002AB159 /* GetStandingsUseCase.swift in Sources */,
 				C457279C2AE197280054195B /* SettingsViewModel.swift in Sources */,
+				C479C1E72AEC23B800A7F19B /* UefaStandingsContract.swift in Sources */,
 				C4137DE22AE7200A00063761 /* DIManager.swift in Sources */,
 				C45727A82AE1A4D00054195B /* LocalData.xcdatamodeld in Sources */,
+				C479C1DA2AEC111500A7F19B /* UefaStandingsUIModel.swift in Sources */,
 				C43F2F3B2ADD9B5C002AB159 /* StandingsServiceImpl.swift in Sources */,
 				C457278C2AE058180054195B /* StandingsData.swift in Sources */,
 				C43F2F4A2ADDA01F002AB159 /* NetworkError.swift in Sources */,
+				C479C1E02AEC20AD00A7F19B /* GetUefaStandingsUseCase.swift in Sources */,
 				C4D508772AE839C800223896 /* DropDownTimeModel.swift in Sources */,
 				C49CEA832AEAEB0B0049355C /* ViewModelsExtension.swift in Sources */,
+				C479C1F02AEC421B00A7F19B /* GetUefaStandingsCanBeUsed.swift in Sources */,
 				C4B66D562AE29AE00036777E /* TimeHelper.swift in Sources */,
 				C4A362362AEAC24800AF4A2C /* Competition.swift in Sources */,
 				C4C8F0142AEB0FC000CA2587 /* RefreshLocalStandingsUseCase.swift in Sources */,
@@ -593,6 +652,7 @@
 				C42F21212AD864CB00D45D7B /* StandingsUIModel.swift in Sources */,
 				C4A3623C2AEAC6D500AF4A2C /* GetCompetitionsUseCase.swift in Sources */,
 				C40CD72B2AEACAB400E722F1 /* CompetitionUIModel.swift in Sources */,
+				C479C1EE2AEC24CF00A7F19B /* Module.swift in Sources */,
 				C4A362382AEAC48800AF4A2C /* StandingsItems.swift in Sources */,
 				C45727A52AE19DC80054195B /* ArgumentedUseCase.swift in Sources */,
 			);

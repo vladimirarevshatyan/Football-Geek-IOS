@@ -25,16 +25,8 @@ struct Football_GeekApp: App {
 private extension Football_GeekApp{
     
     func initializeDependencies(){
-        module(moduleType: ModuleType.Single, moduleCall: {
-            GetStandingsUseCase()
-        })
-        module(moduleType: ModuleType.Single, moduleCall: {
-            GetCacheCanBeUsed()
-        })
         
-        module(moduleType: ModuleType.Single, moduleCall: {
-            SaveCacheIsOnUseCase()
-        })
+        _ = UseCaseModules()
         
         module(moduleType: ModuleType.Single, moduleCall: {
             StandingsServiceImpl()
@@ -53,19 +45,8 @@ private extension Football_GeekApp{
         })
         
         module(moduleType: ModuleType.Single, moduleCall: {
-            GetCompetitionsUseCase()
-        })
-        
-        module(moduleType: ModuleType.Single, moduleCall: {
             PersistenceController()
         })
         
-        module(moduleType: ModuleType.Single, moduleCall: {
-            GetLocalStandingsUseCase()
-        })
-        
-        module(moduleType: ModuleType.Single, moduleCall: {
-            RefreshLocalStandingsUseCase()
-        })
     }
 }

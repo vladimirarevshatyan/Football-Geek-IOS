@@ -67,6 +67,16 @@ func BottomSheet(
     }.frame(maxWidth: .infinity,maxHeight: .infinity, alignment: .topLeading)
 }
 
+func LoadingContent ()-> some View{
+    
+    return VStack(alignment:.leading){
+        ProgressView()
+            .frame(maxWidth:.infinity,
+                   maxHeight: .infinity,alignment: .center)
+    }
+    .padding(20)
+    .frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading)
+}
 
 #Preview {
     StandingsContent()

@@ -13,6 +13,12 @@ struct HomeContent : View{
     var body: some View {
         TabView{
             
+            UefaStandingsContent()
+                .tabItem {
+                    Image(systemName: "soccerball.inverse")
+                    Text("UEFA")
+                }
+            
             StandingsContent()
                 .tabItem {
                     Image(systemName: "chart.bar.fill")

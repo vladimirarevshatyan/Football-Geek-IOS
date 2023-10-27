@@ -40,6 +40,42 @@ class LocalRepositoryImpl : LocalRepository{
         }
     }
 
+    func saveUefaLocalStandings(uefaStandings: [StandingTables]) async {
+        
+        let mockEnvo = persistenceController.context
+        
+        mockEnvo.mergePolicy = NSMergePolicy.mergeByPropertyObjectTrump
+        
+        let _ = uefaStandings.map { model in
+            
+            let daoObject = UefaStandingsLocalModel(context: mockEnvo)
+            daoObject.drawn = model.drawn
+            daoObject.goaldDiff = model.goalDiff
+            daoObject.goalsConceded = model.goalsConceded
+            daoObject.goalsScored = model.goalsScored
+            daoObject.groupId = model.groupId
+            daoObject.groupName = model.groupName
+            daoObject.id = model.name
+            daoObject.leagueId = model.leagueId
+            daoObject.lost = model.lost
+            daoObject.matches = model.matches
+            daoObject.name = model.name
+            daoObject.points = model.points
+            daoObject.rank = model.rank
+            daoObject.seasonId = model.seasonId
+            daoObject.stageId = model.stageId
+            daoObject.stageName = model.stageName
+            daoObject.teamId = model.teamId
+            daoObject.won = model.won
+        }
+        
+        do {
+            try mockEnvo.save()
+        } catch {
+            print(error)
+        }
+    }
+    
     
     func getLocalStandings(competitionId:String) async -> [StandingsLocalModel]{
         
@@ -53,6 +89,17 @@ class LocalRepositoryImpl : LocalRepository{
                return []
            }
     }
+    
+    func getUefaLocalStandings() async -> [UefaStandingsLocalModel] {
+        let fetchRequest: NSFetchRequest<UefaStandingsLocalModel> = UefaStandingsLocalModel.uefaFetchRequest
+           do {
+               let predicateItem =  try persistenceController.context.fetch(fetchRequest)
+               return predicateItem
+           } catch {
+               return []
+           }
+    }
+    
     
     func refreshData() async{
         persistenceController.context.refreshAllObjects()

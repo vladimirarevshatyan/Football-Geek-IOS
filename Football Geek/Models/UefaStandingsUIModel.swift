@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct UefaStandingsUIModel : Hashable{
+    let name:String
+    let position:String
+    let points:String
+    let gamesPlayed:String
+    let groupName:String
+}

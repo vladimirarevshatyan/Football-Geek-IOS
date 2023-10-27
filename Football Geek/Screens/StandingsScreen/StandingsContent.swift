@@ -10,8 +10,6 @@ import Combine
 import CoreData
 
 struct StandingsContent: View {
-    @Environment(\.managedObjectContext) var mockEnvo
-    @State private var cancelable:AnyCancellable?
     @State private var showBottomSheet:Bool = false
     
     @ObservedObject
@@ -97,17 +95,6 @@ struct StandingsContent: View {
         return VStack(alignment:.leading){
             Text(errorMessage ?? "Unprocessable Error")
                 .frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .center)
-        }
-        .padding(20)
-        .frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading)
-    }
-    
-    private func LoadingContent ()-> some View{
-        
-        return VStack(alignment:.leading){
-            ProgressView()
-                .frame(maxWidth:.infinity,
-                       maxHeight: .infinity,alignment: .center)
         }
         .padding(20)
         .frame(maxWidth:.infinity,maxHeight: .infinity,alignment: .topLeading)

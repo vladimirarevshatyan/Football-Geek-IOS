@@ -13,7 +13,7 @@ class StandingScreenViewModel : ViewModel<StandingsEffect>{
     
     @Inject private var persistenceController:PersistenceController
     @Inject private var getStandingsUseCase:GetStandingsUseCase
-    @Inject private var getCanUseCache:GetCacheCanBeUsed
+    @Inject private var getCanUseCache:GetStandingsCacheCanBeUsed
     @Inject private var getCompetitionUseCase:GetCompetitionsUseCase
     @Inject private var getLocalStandingsUseCase:GetLocalStandingsUseCase
     @Inject private var refreshLocalDataUseCase:RefreshLocalStandingsUseCase
@@ -62,6 +62,7 @@ class StandingScreenViewModel : ViewModel<StandingsEffect>{
         
         onUI{
             self.showInternetWarning = !Connectivity.isConnectedToInternet
+            self.isLoading = true
         }
         
         let competitionId = localRepoHelper.getString(key: DefaultsKeys.chosenCompetitionId) ?? Competition.EnglishPremierLeague.rawValue
@@ -78,13 +79,19 @@ class StandingScreenViewModel : ViewModel<StandingsEffect>{
                 self.isLoading = false
             }
         }else{
-            await getLocalStandings(competitionId:competitionId)
+            onUI {
+                self.standingsUiModel = []
+               
+            }
+            await getStandingsFromServer(competitionId:competitionId)
         }
     }
     
     private func saveChosenCompetition(competitionId:String,name:String) async{
         localRepoHelper.saveString(value: competitionId, key: DefaultsKeys.chosenCompetitionId)
-        headerTitle = Competition(rawValue: competitionId)?.getCompetitionName() ?? Competition.EnglishPremierLeague.getCompetitionName()
+        onUI {
+            self.headerTitle = Competition(rawValue: competitionId)?.getCompetitionName() ?? Competition.EnglishPremierLeague.getCompetitionName()
+        }
         await getStandings()
     }
     
@@ -97,13 +104,15 @@ class StandingScreenViewModel : ViewModel<StandingsEffect>{
                 self.isLoading = false
             }
         }else{
-            if(localStandings.isEmpty){
-                self.isLoading = false
-                self.errorMessage = "No Internet Connetion"
-            }else{
-                self.showInternetWarning = true
-                self.standingsUiModel = localStandings.asStandingsUIModel().sorted { $1.position.codingKey.intValue ?? 0 > $0.position.codingKey.intValue ?? 0}
-                self.isLoading = false
+            onUI {
+                if(localStandings.isEmpty){
+                    self.isLoading = false
+                    self.errorMessage = "No Internet Connetion"
+                }else{
+                    self.showInternetWarning = true
+                    self.standingsUiModel = localStandings.asStandingsUIModel().sorted { $1.position.codingKey.intValue ?? 0 > $0.position.codingKey.intValue ?? 0}
+                    self.isLoading = false
+                }
             }
         }
     }
@@ -115,6 +124,7 @@ class StandingScreenViewModel : ViewModel<StandingsEffect>{
         if(standigsTables.isEmpty){
             onUI {
                 self.errorMessage = "Error while ferching data"
+                self.isLoading = false
             }
         }else{
             let finalStandings =  standigsTables.map { standingsModel in

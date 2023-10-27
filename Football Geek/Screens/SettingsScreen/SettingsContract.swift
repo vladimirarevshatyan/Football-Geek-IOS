@@ -10,8 +10,10 @@ import Foundation
 
 enum SettingsEffect : UIEffect{
     
-    case OnCacheToggleStateChange(value:Bool)
+    case OnStandingsToggleStateChange(value:Bool)
+    case OnUefaStandingsToggleStateChange(value:Bool)
     case GetCacheToggleState
     case OnStandingsCacheTimeSelected(id:String)
+    case OnUefaStandingsCacheTimeSelected(id:String)
     case GetUITexts
 }

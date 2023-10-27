@@ -12,5 +12,7 @@ import CoreData
 protocol LocalRepository {
     func saveStandings(standings:[StandingTables],competitionId:String) async
     func getLocalStandings(competitionId:String)async -> [StandingsLocalModel]
+    func getUefaLocalStandings() async -> [UefaStandingsLocalModel]
+    func saveUefaLocalStandings(uefaStandings:[StandingTables]) async
     func refreshData() async
 }

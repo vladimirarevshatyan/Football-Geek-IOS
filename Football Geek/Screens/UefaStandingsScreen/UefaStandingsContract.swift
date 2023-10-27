@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+enum UefaStandingsEffect : UIEffect{
+    case GetStandings
+    case OnRefresh
+}

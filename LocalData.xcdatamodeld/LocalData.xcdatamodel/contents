@@ -16,4 +16,29 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="UefaStandingsLocalModel" representedClassName="UefaStandingsLocalModel" syncable="YES" codeGenerationType="class">
+        <attribute name="drawn" optional="YES" attributeType="String"/>
+        <attribute name="goaldDiff" optional="YES" attributeType="String"/>
+        <attribute name="goalsConceded" optional="YES" attributeType="String"/>
+        <attribute name="goalsScored" optional="YES" attributeType="String"/>
+        <attribute name="groupId" optional="YES" attributeType="String"/>
+        <attribute name="groupName" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="leagueId" optional="YES" attributeType="String"/>
+        <attribute name="lost" optional="YES" attributeType="String"/>
+        <attribute name="matches" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="points" optional="YES" attributeType="String"/>
+        <attribute name="rank" optional="YES" attributeType="String"/>
+        <attribute name="seasonId" optional="YES" attributeType="String"/>
+        <attribute name="stageId" optional="YES" attributeType="String"/>
+        <attribute name="stageName" optional="YES" attributeType="String"/>
+        <attribute name="teamId" optional="YES" attributeType="String"/>
+        <attribute name="won" optional="YES" attributeType="String"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
 </model>

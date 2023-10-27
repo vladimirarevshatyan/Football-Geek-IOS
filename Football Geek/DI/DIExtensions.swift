@@ -23,3 +23,18 @@ extension App {
         }
     }
 }
+
+extension Module{
+    
+    func module<FileType>(moduleType:ModuleType,moduleCall: @escaping ()->FileType
+    ){
+        
+        switch(moduleType){
+        case .Single:
+            DIManager.registger(type: FileType.self, item: moduleCall);
+        case .Factory:
+            //For now factory is not implemented
+            DIManager.registger(type:FileType.self,item: moduleCall);
+        }
+    }
+}
