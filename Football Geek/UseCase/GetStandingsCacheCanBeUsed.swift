@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 
-class GetCacheCanBeUsed : UseCase{
+class GetStandingsCacheCanBeUsed : UseCase{
 
     typealias Argument = String
     typealias ReturnType = Bool
