@@ -8,3 +8,5 @@ Current standings contains 3 leagues
 - Premier League
 - Serie A League
 
+# Usage
+The project is going open source and into archive and will not be maintained, feel Free to use your API key and secure them as needed.
